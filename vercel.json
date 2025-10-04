@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "app.js": {
+      "memory": 128
+    }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/ai-tools-for-data-professionals.html",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "trailingSlash": false
+}
