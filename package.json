@@ -1,13 +1,12 @@
 {
-  "name": "ai-tools-for-data-professionals",
+  "name": "ai-tools-website",
   "version": "1.0.0",
-  "description": "Комплексный гид по ИИ инструментам для специалистов по данным 2025",
-  "main": "index.html",
+  "description": "AI Tools for Data Professionals - Static Website",
+  "main": "ai-tools-for-data-professionals.html",
   "scripts": {
-    "dev": "vercel dev",
     "build": "echo 'Static site - no build needed'"
   },
-  "keywords": ["AI", "data-science", "tools", "2025"],
+  "keywords": ["ai", "data", "tools", "static"],
   "author": "MiniMax Agent",
   "license": "MIT"
 }
