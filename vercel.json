@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/ai-tools-for-data-professionals.html"
-    }
-  ]
-}
