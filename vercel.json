@@ -1,13 +1,7 @@
 {
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/ai-tools-for-data-professionals.html"
     }
   ]
