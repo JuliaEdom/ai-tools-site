@@ -3,837 +3,1006 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-инструменты для Data-профессионалов</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>ИИ инструменты для специалистов по данным 2025</title>
+    <!-- Google Fonts для узких шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 300;
-            font-size: 16px;
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 400;
+            background-color: white;
+            color: black;
             line-height: 1.6;
-            color: #000;
-            background: #fff;
-            letter-spacing: -0.01em;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        /* Surrealist Background Elements */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 10%;
-            right: -10%;
-            width: 400px;
-            height: 300px;
-            background: rgba(240, 240, 240, 0.3);
-            border-radius: 50% 20% 60% 10%;
-            transform: rotate(25deg);
-            z-index: -1;
-            animation: float1 20s ease-in-out infinite;
-        }
-        
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: 20%;
-            left: -15%;
-            width: 300px;
-            height: 400px;
-            background: rgba(250, 250, 250, 0.4);
-            border-radius: 20% 80% 30% 70%;
-            transform: rotate(-15deg);
-            z-index: -1;
-            animation: float2 25s ease-in-out infinite;
-        }
-        
-        .surreal-element-1 {
-            position: fixed;
-            top: 30%;
-            left: 10%;
-            width: 2px;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent, rgba(200, 200, 200, 0.2), transparent);
-            transform: rotate(45deg);
-            z-index: -1;
-            animation: wave1 15s ease-in-out infinite;
-        }
-        
-        .surreal-element-2 {
-            position: fixed;
-            top: 60%;
-            right: 15%;
-            width: 100px;
-            height: 100px;
-            border: 1px solid rgba(220, 220, 220, 0.3);
-            border-radius: 50%;
-            z-index: -1;
-            animation: pulse 12s ease-in-out infinite;
-        }
-        
-        .surreal-element-3 {
-            position: fixed;
-            top: 15%;
-            left: 70%;
-            width: 1px;
-            height: 150px;
-            background: rgba(210, 210, 210, 0.3);
-            transform: rotate(-30deg);
-            z-index: -1;
-            animation: wave2 18s ease-in-out infinite;
-        }
-        
-        @keyframes float1 {
-            0%, 100% { transform: rotate(25deg) translateY(0px) translateX(0px); }
-            33% { transform: rotate(28deg) translateY(-20px) translateX(10px); }
-            66% { transform: rotate(22deg) translateY(15px) translateX(-5px); }
-        }
-        
-        @keyframes float2 {
-            0%, 100% { transform: rotate(-15deg) translateY(0px) translateX(0px); }
-            50% { transform: rotate(-18deg) translateY(25px) translateX(15px); }
-        }
-        
-        @keyframes wave1 {
-            0%, 100% { transform: rotate(45deg) scaleY(1); opacity: 0.2; }
-            50% { transform: rotate(47deg) scaleY(1.1); opacity: 0.3; }
-        }
-        
-        @keyframes wave2 {
-            0%, 100% { transform: rotate(-30deg) scaleY(1); }
-            50% { transform: rotate(-25deg) scaleY(0.9); }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.05); opacity: 0.4; }
-        }
-        
-        /* Top Fixed Menu */
-        .top-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
-            z-index: 1000;
-            padding: 20px 0;
-        }
-        
-        .top-menu-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 400;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-        
-        .top-nav {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .top-nav a {
-            color: #666;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            transition: color 0.2s;
-        }
-        
-        .top-nav a:hover {
-            color: #000;
-        }
-        
-        /* Main Container */
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
             padding-top: 80px;
+            padding-left: 250px;
         }
-        
-        /* Sidebar */
-        .sidebar {
-            width: 280px;
-            padding: 40px 40px 40px 0;
-            position: sticky;
-            top: 80px;
-            height: fit-content;
-        }
-        
-        .sidebar-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #000;
-            margin-bottom: 30px;
-            letter-spacing: -0.02em;
-        }
-        
-        .sidebar-nav {
-            list-style: none;
-        }
-        
-        .sidebar-nav li {
-            margin-bottom: 20px;
-        }
-        
-        .sidebar-nav a {
-            color: #666;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            transition: color 0.2s;
-        }
-        
-        .sidebar-nav a:hover,
-        .sidebar-nav a.active {
-            color: #000;
-        }
-        
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            padding: 40px 0 40px 40px;
-            border-left: 1px solid #e5e5e5;
-            position: relative;
-        }
-        
-        /* Additional Surreal Elements in Content */
-        .main-content::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: 5%;
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(200, 200, 200, 0.3), transparent);
-            transform: rotate(15deg);
-            animation: drift 20s ease-in-out infinite;
-        }
-        
-        .main-content::after {
-            content: '';
-            position: absolute;
-            bottom: 30%;
-            right: 10%;
-            width: 60px;
-            height: 60px;
-            border: 1px solid rgba(210, 210, 210, 0.2);
-            border-radius: 0 50% 0 50%;
-            transform: rotate(45deg);
-            animation: morph 16s ease-in-out infinite;
-        }
-        
-        @keyframes drift {
-            0%, 100% { transform: rotate(15deg) translateX(0px); opacity: 0.3; }
-            50% { transform: rotate(12deg) translateX(-10px); opacity: 0.5; }
-        }
-        
-        @keyframes morph {
-            0%, 100% { 
-                transform: rotate(45deg); 
-                border-radius: 0 50% 0 50%; 
-                opacity: 0.2; 
-            }
-            50% { 
-                transform: rotate(50deg); 
-                border-radius: 50% 0 50% 0; 
-                opacity: 0.4; 
-            }
-        }
-        
-        .header {
-            margin-bottom: 60px;
-        }
-        
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            font-weight: 400;
-            color: #000;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-        }
-        
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            max-width: 600px;
-        }
-        
-        .section {
-            margin-bottom: 80px;
-        }
-        
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: #000;
-            margin-bottom: 40px;
-            letter-spacing: -0.02em;
-        }
-        
-        .profession-grid {
-            display: grid;
-            gap: 40px;
-        }
-        
-        .profession-card {
-            background: #fff;
-            border-radius: 0;
-            border: 1px solid #e5e5e5;
-            padding: 40px;
-            position: relative;
-        }
-        
-        .profession-card::before {
-            content: '';
-            position: absolute;
+
+        /* Фиксированное верхнее меню */
+        .top-nav {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #000, transparent);
+            height: 80px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 1px solid #ccc;
         }
-        
-        .profession-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
+
+        .top-nav h1 {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
             font-weight: 400;
-            color: #000;
-            margin-bottom: 15px;
-            letter-spacing: -0.02em;
+            font-size: 24px;
+            letter-spacing: -0.5px;
         }
-        
-        .profession-description {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 15px;
-            letter-spacing: -0.01em;
+
+        /* Боковое меню */
+        .side-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background-color: #f8f8f8;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+            z-index: 999;
         }
-        
-        .tools-list {
-            display: grid;
-            gap: 25px;
+
+        .side-nav ul {
+            list-style: none;
+            padding: 20px 0;
         }
-        
-        .tool-item {
-            border-left: 2px solid #f0f0f0;
-            padding-left: 20px;
-            transition: border-color 0.2s;
+
+        .side-nav li {
+            padding: 0;
         }
-        
-        .tool-item:hover {
-            border-color: #000;
-        }
-        
-        .tool-name {
-            font-weight: 500;
-            color: #000;
-            margin-bottom: 8px;
-            font-size: 15px;
-            letter-spacing: -0.01em;
-        }
-        
-        .tool-description {
-            color: #666;
+
+        .side-nav a {
+            display: block;
+            padding: 12px 20px;
+            color: black;
+            text-decoration: none;
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
             font-size: 14px;
-            letter-spacing: -0.01em;
-            line-height: 1.5;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
         }
-        
-        .tool-description strong {
-            color: #000;
-            font-weight: 500;
+
+        .side-nav a:hover {
+            background-color: #e0e0e0;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                padding: 20px 0;
-                position: static;
-            }
-            
-            .main-content {
-                padding: 20px 0;
-                border-left: none;
-                border-top: 1px solid #e5e5e5;
-            }
-            
-            .top-menu-content {
-                padding: 0 20px;
-            }
-            
-            .top-nav {
-                gap: 20px;
-            }
+
+        /* Основной контент */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        
+
+        /* Заголовки */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid black;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Основной текст */
+        p, li {
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Разделы профессий */
+        .profession-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        .task-list {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid black;
+        }
+
+        .tools-section {
+            margin-top: 30px;
+        }
+
+        .tool-category {
+            margin-bottom: 30px;
+        }
+
+        .tool-category h4 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .tool-item {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .tool-name {
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: black;
+        }
+
+        .tool-price {
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .tool-description {
+            font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* Информационные блоки */
+        .info-block {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #666;
+        }
+
+        .methodology {
+            background-color: #f8f8f8;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid #ddd;
+        }
+
+        .methodology h3 {
+            margin-top: 0;
+        }
+
+        /* Ссылки */
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* Адаптивность */
         @media (max-width: 768px) {
-            .main-title {
-                font-size: 32px;
+            body {
+                padding-left: 0;
+                padding-top: 120px;
             }
-            
-            .section-title {
-                font-size: 24px;
-            }
-            
-            .profession-card {
-                padding: 30px;
-            }
-            
+
             .top-nav {
+                height: 120px;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .side-nav {
                 display: none;
+            }
+
+            .main-content {
+                padding: 20px 15px;
+            }
+
+            .profession-section {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Surreal Elements -->
-    <div class="surreal-element-1"></div>
-    <div class="surreal-element-2"></div>
-    <div class="surreal-element-3"></div>
-
-    <!-- Top Menu -->
-    <nav class="top-menu">
-        <div class="top-menu-content">
-            <a href="#" class="logo">AI Tools</a>
-            <div class="top-nav">
-                <a href="#data-analyst">Data Analyst</a>
-                <a href="#data-engineer">Data Engineer</a>
-                <a href="#data-scientist">Data Scientist</a>
-                <a href="#dwh-analyst">DWH Analyst</a>
-                <a href="#bi-analyst">BI Analyst</a>
-                <a href="#hr-analyst">HR Analyst</a>
-            </div>
-        </div>
+    <!-- Верхнее меню -->
+    <nav class="top-nav">
+        <h1>ИИ инструменты для специалистов по данным — Октябрь 2025</h1>
     </nav>
 
-    <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2 class="sidebar-title">Профессии</h2>
-            <nav>
-                <ul class="sidebar-nav">
-                    <li><a href="#data-analyst">Data Analyst</a></li>
-                    <li><a href="#data-engineer">Data Engineer</a></li>
-                    <li><a href="#data-scientist">Data Scientist</a></li>
-                    <li><a href="#dwh-analyst">DWH Analyst</a></li>
-                    <li><a href="#bi-analyst">BI Analyst</a></li>
-                    <li><a href="#hr-analyst">HR Analyst</a></li>
-                </ul>
-            </nav>
-        </aside>
+    <!-- Боковое меню -->
+    <nav class="side-nav">
+        <ul>
+            <li><a href="#introduction">Введение</a></li>
+            <li><a href="#methodology">Методология</a></li>
+            <li><a href="#big-data-analyst">Big Data Analyst</a></li>
+            <li><a href="#product-analyst">Product Analyst</a></li>
+            <li><a href="#data-scientist">Data Scientist</a></li>
+            <li><a href="#dwh-analyst">DWH Analyst</a></li>
+            <li><a href="#dwh-architect">DWH Architect</a></li>
+            <li><a href="#db-administrator">DB Administrator</a></li>
+            <li><a href="#db-architect">DB Architect</a></li>
+            <li><a href="#data-engineer">Data Engineer</a></li>
+            <li><a href="#hr-manager">HR Manager</a></li>
+        </ul>
+    </nav>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="header">
-                <h1 class="main-title">AI-инструменты для Data-профессионалов</h1>
-                <p class="subtitle">Куратированная коллекция готовых AI-платформ и сервисов для современных специалистов по данным. Только решения, которые можно использовать без программирования моделей с нуля.</p>
+    <!-- Основной контент -->
+    <main class="main-content">
+        <section id="introduction">
+            <h1>Современные ИИ инструменты для специалистов по данным</h1>
+            <p>Comprehensive guide to AI tools and agents for data professionals in 2025. This analysis covers 9 key data roles and presents the most advanced AI solutions available in October 2025, with focus on AI agents and comprehensive automation platforms.</p>
+        </section>
+
+        <section id="methodology" class="methodology">
+            <h3>Методология исследования</h3>
+            <p>Данное исследование основано на анализе современных трендов в области искусственного интеллекта на октябрь 2025 года. Источники включают:</p>
+            <ul>
+                <li>Анализ обзоров ведущих платформ: Gartner, TrustRadius, G2</li>
+                <li>Изучение официальной документации и pricing страниц ведущих поставщиков ИИ решений</li>
+                <li>Анализ результатов внедрения ИИ агентов в корпорациях</li>
+                <li>Исследования McKinsey, PwC и других консалтинговых компаний по ИИ в 2025 году</li>
+            </ul>
+            <p>Критерии отбора инструментов:</p>
+            <ul>
+                <li>Современность: активная разработка и поддержка в 2025 году</li>
+                <li>ИИ-функциональность: наличие агентов, автоматизации, ML capabilities</li>
+                <li>Готовность к использованию: минимальная потребность в программировании</li>
+                <li>Масштабируемость: подходит для enterprise использования</li>
+            </ul>
+        </section>
+
+        <section id="big-data-analyst" class="profession-section">
+            <h2>Big Data Analyst</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Обработка и анализ больших объемов данных в реальном времени</li>
+                    <li>Выявление паттернов и трендов в массивах данных</li>
+                    <li>Создание автоматизированных дашбордов и отчетов</li>
+                    <li>Построение предиктивных моделей для бизнес-прогнозов</li>
+                    <li>Оптимизация производительности обработки данных</li>
+                    <li>Интеграция данных из множественных источников</li>
+                    <li>Создание системы мониторинга качества данных</li>
+                </ol>
             </div>
 
-            <!-- Data Analyst -->
-            <section id="data-analyst" class="section">
-                <h2 class="section-title">Data Analyst</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">Аналитик данных</h3>
-                        <p class="profession-description">Специалист по извлечению инсайтов из данных с помощью готовых AI-платформ для анализа, визуализации и автоматизации отчетности.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AI-ассистированный анализ данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Julius AI (ограниченно), Google NotebookLM<br>
-                                    <strong>Платные:</strong> Julius AI Pro ($20/месяц), Powerdrill AI ($49/месяц), DataCamp Workspace ($25/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: Автоматическое создание отчетов</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> ChatGPT Data Analyst (ограниченно), Claude Projects<br>
-                                    <strong>Платные:</strong> Tableau Einstein Analytics ($70/месяц), Microsoft Power BI Premium ($20/месяц), Qlik Sense AI ($30/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: AI-powered визуализация данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Gamma AI Charts, Observable Plot with AI<br>
-                                    <strong>Платные:</strong> Tableau AI ($70/месяц), Power BI Copilot ($20/месяц), Sisense AI ($2000/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: Прогнозная аналитика без кода</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google AutoML Tables (ограниченно), Azure AutoML (базовый)<br>
-                                    <strong>Платные:</strong> AWS Forecast ($0.60/1000 прогнозов), Google Cloud AutoML ($20/час), DataRobot ($50k/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: AI-обнаружение аномалий</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> AWS CloudWatch Anomaly Detection (ограниченно)<br>
-                                    <strong>Платные:</strong> Anodot AI ($500/месяц), Datadog Anomaly Detection ($18/хост), Splunk ITSI ($150/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: Natural Language to SQL</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> SQLFlash Community, Text2SQL AI<br>
-                                    <strong>Платные:</strong> Snowflake Cortex ($2.00/credit), BlazeSQL ($20/месяц), AskYourDatabase ($10/месяц)
-                                </div>
-                            </div>
-                        </div>
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">H2O.ai Open Source</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Платформа автоматического машинного обучения с ИИ-агентами для анализа больших данных, AutoML и предиктивной аналитики.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Pandas AI</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">ИИ-агент для анализа данных с Natural Language Processing для запросов к данным и автоматической генерации инсайтов.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">PostHog Analytics</div>
+                        <div class="tool-price">Бесплатно до 1M событий/месяц</div>
+                        <div class="tool-description">Open-source платформа аналитики с ИИ-инсайтами и автоматическим выявлением аномалий.</div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Data Engineer -->
-            <section id="data-engineer" class="section">
-                <h2 class="section-title">Data Engineer</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">Инженер данных</h3>
-                        <p class="profession-description">Специалист по построению и оптимизации data pipelines с использованием готовых AI-сервисов для автоматизации ETL процессов и управления данными.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AI-автоматизация ETL процессов</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Airbyte Community (с AI коннекторами)<br>
-                                    <strong>Платные:</strong> Fivetran AI ($1.00/MAR), Stitch Data AI ($100/месяц), Informatica CLAIRE ($5k/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: AI-оптимизация данных и схем</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> AWS Glue DataBrew (ограниченно)<br>
-                                    <strong>Платные:</strong> AWS Glue Studio ($0.44/DPU-час), Google Cloud Dataprep ($2.50/час), Trifacta Wrangler ($3k/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: AI-мониторинг качества данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Great Expectations Cloud (ограниченно)<br>
-                                    <strong>Платные:</strong> Monte Carlo Data ($700/месяц), Datafold AI ($400/месяц), Soda Cloud ($300/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: Intelligent Data Catalog</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Cloud Data Catalog (базовый)<br>
-                                    <strong>Платные:</strong> Alation AI ($50k/год), Collibra AI ($30k/год), DataHub Plus ($15k/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: AI-управление потоками данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Prefect Cloud Community<br>
-                                    <strong>Платные:</strong> Databricks Workflows ($0.40/DBU), Apache Airflow Managed ($20/час), Dagster Cloud ($200/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: AI-масштабирование обработки данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Apache Spark на Cloud (ограниченно)<br>
-                                    <strong>Платные:</strong> Databricks AI Runtime ($0.40/DBU), Google Dataflow ($0.11/vCPU), AWS EMR ($0.27/час)
-                                </div>
-                            </div>
-                        </div>
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Snowflake Data Science Agent</div>
+                        <div class="tool-price">От $40 в час compute time + storage costs</div>
+                        <div class="tool-description">Автономный ИИ-агент для создания ML пайплайнов, анализа данных и генерации инсайтов в Snowflake платформе.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Databricks AI/BI Genie</div>
+                        <div class="tool-price">От $0.20 за DBU (Data Brick Unit)</div>
+                        <div class="tool-description">Conversational AI для анализа данных, автоматического создания дашбордов и выявления инсайтов через natural language.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Palantir Foundry AIP</div>
+                        <div class="tool-price">От $50,000/год (enterprise licensing)</div>
+                        <div class="tool-description">ИИ платформа для анализа больших данных с возможностями создания custom AI agents для specific use cases.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Thoughtspot Sage</div>
+                        <div class="tool-price">От $1,500/месяц за 100 пользователей</div>
+                        <div class="tool-description">ИИ-powered search-driven analytics с natural language processing для создания insights из больших данных.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Estuary Flow</div>
+                        <div class="tool-price">От $500/месяц за real-time data pipelines</div>
+                        <div class="tool-description">Real-time data automation platform с ИИ-оптимизированными пайплайнами и automatic schema evolution.</div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Data Scientist -->
-            <section id="data-scientist" class="section">
-                <h2 class="section-title">Data Scientist</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">Специалист по данным</h3>
-                        <p class="profession-description">Эксперт по извлечению знаний из данных с использованием готовых AI-платформ для создания предиктивных моделей и развертывания ML решений.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AutoML платформы без кода</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google AutoML (ограниченно), Azure AutoML (базовый)<br>
-                                    <strong>Платные:</strong> DataRobot ($50k/год), Dataiku ($50k/год), AWS SageMaker AutoPilot ($0.17/час)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: Готовые MLOps платформы</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Vertex AI (ограниченно), AWS SageMaker Studio Lab<br>
-                                    <strong>Платные:</strong> Azure Machine Learning Studio ($0.133/час), Databricks ML Runtime ($0.40/DBU), MLflow Managed ($200/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: AI-ассистированная разработка кода</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> GitHub Copilot (для студентов), Cursor AI (базовый)<br>
-                                    <strong>Платные:</strong> GitHub Copilot Pro ($20/месяц), Cursor Pro ($20/месяц), JetBrains AI Assistant ($8.33/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: Работа с LLM API</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Hugging Face Inference API (ограниченно), Google AI Studio<br>
-                                    <strong>Платные:</strong> OpenAI API ($0.03/1K токенов), Anthropic Claude ($0.025/1K токенов), Cohere API ($1.50/1M токенов)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: Computer Vision API</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Vision AI (ограниченно), Azure Computer Vision (базовый)<br>
-                                    <strong>Платные:</strong> AWS Rekognition ($1.00/1000 изображений), Clarifai ($20/месяц), Roboflow Universe ($10/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: Готовые AI модели для специфических задач</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Teachable Machine, IBM Watson Free Tier<br>
-                                    <strong>Платные:</strong> Amazon Personalize ($0.05/час), IBM Watson Discovery ($500/месяц), Microsoft Cognitive Services ($1/1000 транзакций)
-                                </div>
-                            </div>
-                        </div>
+        <section id="product-analyst" class="profession-section">
+            <h2>Product Analyst</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Анализ пользовательского поведения и конверсий</li>
+                    <li>A/B тестирование и экспериментирование</li>
+                    <li>Создание product metrics и KPI dashboards</li>
+                    <li>Cohort анализ и retention исследования</li>
+                    <li>Выявление growth opportunities через данные</li>
+                    <li>Прогнозирование churn и lifetime value</li>
+                    <li>Анализ customer journey и user experience</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">PostHog</div>
+                        <div class="tool-price">Бесплатно до 1M событий/месяц</div>
+                        <div class="tool-description">Comprehensive product analytics с session replay, feature flags и ИИ-powered insights для выявления user behavior patterns.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Mixpanel (Starter)</div>
+                        <div class="tool-price">Бесплатно до 1M событий/месяц</div>
+                        <div class="tool-description">Event-based analytics с automated insights и anomaly detection для tracking user engagement.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Google Analytics 4 with AI Insights</div>
+                        <div class="tool-price">Бесплатно</div>
+                        <div class="tool-description">Enhanced GA4 с machine learning insights, predictive metrics и automated anomaly detection.</div>
                     </div>
                 </div>
-            </section>
 
-            <!-- DWH Analyst -->
-            <section id="dwh-analyst" class="section">
-                <h2 class="section-title">DWH Analyst</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">Аналитик хранилища данных</h3>
-                        <p class="profession-description">Специалист по анализу структур данных в корпоративных хранилищах с использованием AI-платформ для автоматизации SQL и оптимизации производительности.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AI-оптимизация SQL запросов</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> SQLFlash Community, DBeaver AI Assistant<br>
-                                    <strong>Платные:</strong> Snowflake Cortex ($2.00/credit), BlazeSQL ($20/месяц), DataGrip AI ($8.90/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: AI-мониторинг производительности DWH</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> CloudWatch AI Insights (ограниченно)<br>
-                                    <strong>Платные:</strong> Datadog Database Monitoring ($25/хост), New Relic AI ($150/месяц), SolarWinds DPA ($2000/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: Intelligent Data Lineage</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Azure Purview (ограниченно)<br>
-                                    <strong>Платные:</strong> Collibra Lineage ($30k/год), Informatica EDC ($25k/год), Alation Data Lineage ($50k/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: AI-анализ использования данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Cloud Data Catalog (базовый)<br>
-                                    <strong>Платные:</strong> Atlan AI ($15k/год), Stemma Discovery ($10k/год), Select Star ($5k/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: Автоматическое тестирование данных</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Great Expectations Cloud (ограниченно)<br>
-                                    <strong>Платные:</strong> Monte Carlo AI ($700/месяц), Datafold AI ($400/месяц), Soda Cloud AI ($300/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: AI-управление метаданными</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> AWS Glue Data Catalog (ограниченно)<br>
-                                    <strong>Платные:</strong> Alation AI ($50k/год), Collibra AI ($30k/год), DataHub Plus ($15k/год)
-                                </div>
-                            </div>
-                        </div>
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Pendo AI Analytics</div>
+                        <div class="tool-price">От $7,000/год для 500 MAU</div>
+                        <div class="tool-description">ИИ-powered product experience platform с automatic user behavior analysis, in-app guidance generation и AI-powered customer intelligence.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Amplitude Plus with AI</div>
+                        <div class="tool-price">От $49/месяц + usage-based pricing</div>
+                        <div class="tool-description">Advanced product intelligence с machine learning для user journey optimization, cohort prediction и automated experiment insights.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Heap with Session Replay AI</div>
+                        <div class="tool-price">От $3,600/год</div>
+                        <div class="tool-description">Autocapture analytics с ИИ-анализом session recordings для выявления UX issues и optimization opportunities.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">FullStory with StoryAI</div>
+                        <div class="tool-price">Custom pricing от $10,000/год</div>
+                        <div class="tool-description">Digital experience intelligence с ИИ-summarization фрикционных точек и automated insight generation.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Quantum Metric with Felix AI</div>
+                        <div class="tool-price">Enterprise pricing от $50,000/год</div>
+                        <div class="tool-description">Real-time digital analytics с ИИ для автоматического выявления revenue impact и customer experience optimization.</div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- BI Analyst -->
-            <section id="bi-analyst" class="section">
-                <h2 class="section-title">BI Analyst</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">Аналитик бизнес-интеллекта</h3>
-                        <p class="profession-description">Специалист по созданию BI решений с использованием AI-powered платформ для автоматизации аналитики и intelligent reporting.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AI-powered дашборды</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Power BI AI Visuals, Tableau Public AI<br>
-                                    <strong>Платные:</strong> Tableau Einstein Analytics ($70/месяц), Power BI Premium ($20/месяц), Qlik Sense AI ($30/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: Natural Language BI</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Power BI Q&A (базовый), Tableau Ask Data (ограниченно)<br>
-                                    <strong>Платные:</strong> ThoughtSpot Search ($1200/месяц), Sisense AI ($2000/месяц), Looker AI ($35/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: Автоматические инсайты</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Power BI Auto Insights, Google Analytics Intelligence<br>
-                                    <strong>Платные:</strong> Tableau Explain Data ($70/месяц), Microsoft Viva Sales Insights ($40/месяц), Qlik Insight Advisor ($30/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: AI-прогнозирование в BI</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Power BI AI Forecasting (базовый)<br>
-                                    <strong>Платные:</strong> Tableau Advanced Analytics ($70/месяц), Qlik AutoML ($50/месяц), SAS Visual Analytics ($15k/год)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: Intelligent Alerting</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Analytics Smart Goals<br>
-                                    <strong>Платные:</strong> ThoughtSpot Monitor ($1200/месяц), Looker Alerts Plus ($35/месяц), Sisense Smart Alerts ($2000/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: AI-оптимизация отчетов</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Power BI Performance Analyzer<br>
-                                    <strong>Платные:</strong> Tableau Hyper AI ($70/месяц), Qlik Performance Tuner ($30/месяц), Sisense Query Optimizer ($2000/месяц)
-                                </div>
-                            </div>
-                        </div>
+        <section id="data-scientist" class="profession-section">
+            <h2>Data Scientist</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Построение и deployment машинного обучения моделей</li>
+                    <li>Feature engineering и data preprocessing</li>
+                    <li>Экспериментирование с различными ML алгоритмами</li>
+                    <li>Создание predictive и recommendation систем</li>
+                    <li>MLOps: версионирование, мониторинг моделей</li>
+                    <li>Работа с unstructured data (NLP, computer vision)</li>
+                    <li>Статистический анализ и hypothesis testing</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Hugging Face Transformers</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">State-of-the-art NLP models и tools для fine-tuning, с готовыми agents для text generation и classification.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">MLflow</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">MLOps platform для tracking экспериментов, model versioning и deployment с integration для ИИ workflows.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">AutoML with AutoGluon</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Automated machine learning с automatic feature engineering, model selection и hyperparameter tuning.</div>
                     </div>
                 </div>
-            </section>
 
-            <!-- HR Analyst -->
-            <section id="hr-analyst" class="section">
-                <h2 class="section-title">HR Analyst</h2>
-                <div class="profession-grid">
-                    <div class="profession-card">
-                        <h3 class="profession-title">HR-аналитик</h3>
-                        <p class="profession-description">Специалист по анализу HR данных с использованием AI-платформ для прогнозирования текучести, оценки performance и автоматизации HR процессов.</p>
-                        
-                        <div class="tools-list">
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 1: AI-прогнозирование текучести кадров</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Workspace AI Insights (ограниченно)<br>
-                                    <strong>Платные:</strong> Workday AI ($50/сотрудник/месяц), BambooHR AI ($10/сотрудник/месяц), SAP SuccessFactors AI ($15/сотрудник/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 2: AI-анализ performance сотрудников</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Microsoft Viva Insights (базовый)<br>
-                                    <strong>Платные:</strong> Culture Amp AI ($8/сотрудник/месяц), 15Five AI ($15/сотрудник/месяц), Lattice AI ($11/сотрудник/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 3: Intelligent Recruiting</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> LinkedIn Talent Insights (ограниченно)<br>
-                                    <strong>Платные:</strong> HireVue AI ($35/кандидат), Pymetrics AI ($12/оценка), Entelo AI ($25/сотрудник/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 4: AI-анализ engagement и настроений</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Microsoft Workplace Analytics (базовый)<br>
-                                    <strong>Платные:</strong> Glint AI ($2/сотрудник/месяц), TINYpulse AI ($3/сотрудник/месяц), Officevibe AI ($4/сотрудник/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 5: AI-планирование workforce</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Google Sheets AI Functions<br>
-                                    <strong>Платные:</strong> Kronos AI ($15/сотрудник/месяц), ADP Workforce AI ($8/сотрудник/месяц), Ceridian Dayforce AI ($12/сотрудник/месяц)
-                                </div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-name">Задача 6: AI-автоматизация HR операций</div>
-                                <div class="tool-description">
-                                    <strong>Бесплатные:</strong> Zapier AI (ограниченно)<br>
-                                    <strong>Платные:</strong> UiPath HR AI ($420/бот/месяц), Automation Anywhere HR ($750/бот/месяц), Microsoft Power Automate ($15/пользователь/месяц)
-                                </div>
-                            </div>
-                        </div>
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">DataRobot AI Platform</div>
+                        <div class="tool-price">От $50,000/год enterprise license</div>
+                        <div class="tool-description">End-to-end AutoML platform с ИИ-агентами для automatic model building, deployment и monitoring с explainable AI.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">H2O Driverless AI</div>
+                        <div class="tool-price">От $20,000/год per user</div>
+                        <div class="tool-description">Automated machine learning platform с genetic algorithms для feature engineering и automatic model interpretation.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Dataiku Data Science Studio</div>
+                        <div class="tool-price">От $5,000/месяц для 5 пользователей</div>
+                        <div class="tool-description">Collaborative data science platform с ИИ-ассистентами для code generation, automatic documentation и model optimization.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Amazon SageMaker Studio with AI Agents</div>
+                        <div class="tool-price">Pay-per-use от $0.05 за час instance time</div>
+                        <div class="tool-description">Managed ML platform с ИИ-powered code suggestions, automatic model tuning и built-in deployment agents.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Azure Machine Learning with Prompt Flow</div>
+                        <div class="tool-price">Pay-per-compute от $0.10 за compute hour</div>
+                        <div class="tool-description">Cloud ML platform с integrated ИИ agents для LLM workflow orchestration и automatic model lifecycle management.</div>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        <section id="dwh-analyst" class="profession-section">
+            <h2>DWH Analyst</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Проектирование и оптимизация структуры хранилища данных</li>
+                    <li>ETL/ELT процессы и data pipeline automation</li>
+                    <li>Создание dimensional models и star schemas</li>
+                    <li>Performance tuning запросов и индексов</li>
+                    <li>Data quality monitoring и validation</li>
+                    <li>Создание бизнес-слоя и semantic models</li>
+                    <li>Управление метаданными и data lineage</li>
+                </ol>
+            </div>
 
-        // Update active nav state
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.sidebar-nav a');
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">dbt with AI Assistance</div>
+                        <div class="tool-price">Бесплатно (dbt Core)</div>
+                        <div class="tool-description">Data transformation tool с ИИ-powered documentation generation, automatic testing и AI-assisted SQL optimization.</div>
+                    </div>
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+                    <div class="tool-item">
+                        <div class="tool-name">Prefect AI</div>
+                        <div class="tool-price">Бесплатно (Community Edition)</div>
+                        <div class="tool-description">ИИ-powered workflow orchestration с автоматическим планированием, intelligent retry logic и predictive failure detection.</div>
+                    </div>
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+                    <div class="tool-item">
+                        <div class="tool-name">Great Expectations</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Data quality validation framework с automated profiling и anomaly detection для data pipeline monitoring.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">WhereScape Data Automation</div>
+                        <div class="tool-price">От $25,000/год per developer</div>
+                        <div class="tool-description">Automated data warehouse development с ИИ-assisted data modeling, code generation и automatic documentation.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Matillion Data Productivity Cloud</div>
+                        <div class="tool-price">От $2,000/месяц</div>
+                        <div class="tool-description">Cloud-native ETL/ELT с ИИ-powered data transformation suggestions, automatic schema detection и intelligent pipeline optimization.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Fivetran with AI Data Insights</div>
+                        <div class="tool-price">От $1,500/месяц + usage costs</div>
+                        <div class="tool-description">Automated data integration с machine learning для connector optimization, automatic schema evolution и data anomaly detection.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Informatica IDMC with CLAIRE</div>
+                        <div class="tool-price">От $2,000/месяц per subscription</div>
+                        <div class="tool-description">Enterprise data management с ИИ-powered data discovery, automatic data mapping и intelligent data quality recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Talend Cloud with AutoML</div>
+                        <div class="tool-price">От $1,170/месяц</div>
+                        <div class="tool-description">Data integration platform с ИИ для automatic data profiling, smart data preparation и predictive data quality monitoring.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dwh-architect" class="profession-section">
+            <h2>DWH Architect</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Стратегическое планирование архитектуры данных</li>
+                    <li>Выбор технологий и платформ для хранилища</li>
+                    <li>Проектирование governance и security policies</li>
+                    <li>Scalability planning и capacity management</li>
+                    <li>Integration architecture между системами</li>
+                    <li>Cloud migration strategy и hybrid deployments</li>
+                    <li>Cost optimization и resource planning</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">DataForm AI</div>
+                        <div class="tool-price">Бесплатно до 5 разработчиков</div>
+                        <div class="tool-description">ИИ-инструмент для автоматической генерации и оптимизации SQL, intelligent data modeling и automated documentation для data warehouses.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Julius AI for Data Warehouses</div>
+                        <div class="tool-price">Бесплатно (Community Plan)</div>
+                        <div class="tool-description">ИИ-агент для анализа DWH с Natural Language SQL generation, automated performance tuning и intelligent schema recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">OpenLineage</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Data lineage tracking framework с automated metadata collection и AI-powered impact analysis для data governance.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Snowflake Architecture Services with AI</div>
+                        <div class="tool-price">Consultation от $500/час + platform costs</div>
+                        <div class="tool-description">Managed data warehouse с ИИ-powered query optimization, automatic scaling и intelligent resource management recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Databricks Lakehouse Platform</div>
+                        <div class="tool-price">От $0.40 per DBU hour</div>
+                        <div class="tool-description">Unified ИИ-платформа для data science с автоматическим feature engineering, intelligent model selection и advanced collaborative AI workspace.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Azure Synapse Analytics</div>
+                        <div class="tool-price">Pay-per-query от $5 per TB processed</div>
+                        <div class="tool-description">Enterprise data warehouse с ИИ-powered workload management, automatic indexing и intelligent query acceleration.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">AWS Redshift with ML</div>
+                        <div class="tool-price">От $0.25 per hour per node</div>
+                        <div class="tool-description">Managed data warehouse с automatic vacuum, machine learning insights и AI-powered performance recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Google BigQuery with AI</div>
+                        <div class="tool-price">Pay-per-query от $5 per TB</div>
+                        <div class="tool-description">Serverless data warehouse с BI Engine, automatic query optimization и integrated ML capabilities для predictive analytics.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="db-administrator" class="profession-section">
+            <h2>Database Administrator</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Автоматизация мониторинга производительности БД</li>
+                    <li>Predictive maintenance и capacity planning</li>
+                    <li>Automated backup и disaster recovery</li>
+                    <li>Security monitoring и threat detection</li>
+                    <li>Query optimization и index tuning</li>
+                    <li>Automated patch management и updates</li>
+                    <li>Database health diagnostics и troubleshooting</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">OtterTune AI</div>
+                        <div class="tool-price">Бесплатно (Community Edition)</div>
+                        <div class="tool-description">ИИ-агент для автоматического тюнинга базы данных с машинным обучением для оптимизации производительности и предотвращения проблем.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Prometheus + Grafana for DB Monitoring</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Monitoring stack с machine learning anomaly detection, predictive alerting и automated dashboard generation.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Percona Monitoring and Management</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">Database monitoring solution с AI-powered query advisor, performance insights и automated optimization suggestions.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Datadog Database AI</div>
+                        <div class="tool-price">От $15/месяц per host</div>
+                        <div class="tool-description">ИИ-powered мониторинг баз данных с automated performance analysis, intelligent alerting и predictive maintenance recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">SolarWinds Database Performance AI</div>
+                        <div class="tool-price">От $2,995/год</div>
+                        <div class="tool-description">ИИ-платформа для database optimization с machine learning analytics, automated tuning recommendations и intelligent anomaly detection.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Xata AI-Powered Postgres Agent</div>
+                        <div class="tool-price">От $50/месяц per database</div>
+                        <div class="tool-description">Managed ИИ-database с automated performance tuning, intelligent query optimization и predictive maintenance.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Amazon RDS Performance Insights with ML</div>
+                        <div class="tool-price">От $0.009 per vCPU hour</div>
+                        <div class="tool-description">Managed database monitoring с machine learning для performance bottleneck detection и automated tuning recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Solarwinds Database Performance Analyzer with AI</div>
+                        <div class="tool-price">От $2,045/год</div>
+                        <div class="tool-description">Cross-platform database monitoring с ИИ-powered anomaly detection, automated root cause analysis и performance forecasting.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="db-architect" class="profession-section">
+            <h2>Database Architect</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Проектирование database schemas и data models</li>
+                    <li>Multi-database strategy и technology selection</li>
+                    <li>Sharding и partitioning strategies</li>
+                    <li>Replication и high availability design</li>
+                    <li>Database security architecture</li>
+                    <li>Performance optimization на уровне архитектуры</li>
+                    <li>Cloud database migration planning</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Eraser.io AI Database Designer</div>
+                        <div class="tool-price">Бесплатно до 3 диаграмм</div>
+                        <div class="tool-description">ИИ-агент для автоматического проектирования схем баз данных с оптимизацией структуры и генерацией рекомендаций по индексации.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">CockroachDB Serverless</div>
+                        <div class="tool-price">Бесплатно до 50M RU/месяц</div>
+                        <div class="tool-description">Distributed SQL database с automatic sharding, AI-enhanced query planning и intelligent data placement.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Neo4j AuraDB Free</div>
+                        <div class="tool-price">Бесплатно для малых проектов</div>
+                        <div class="tool-description">Graph database с AI-powered query suggestions, automatic schema recommendations и machine learning integration.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">AWS Aurora with ML Integration</div>
+                        <div class="tool-price">От $0.10 per ACU hour</div>
+                        <div class="tool-description">Serverless relational database с machine learning для performance insights, automated scaling и intelligent backup optimization.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Google Cloud Spanner</div>
+                        <div class="tool-price">От $0.90 per node hour</div>
+                        <div class="tool-description">Global distributed database с AI-powered query optimization, automatic sharding recommendations и intelligent instance sizing.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">PlanetScale with AI Branching</div>
+                        <div class="tool-price">От $29/месяц per database</div>
+                        <div class="tool-description">Cloud-native ИИ-platform с intelligent schema optimization, automated query analysis и scaling recommendations.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Fauna Serverless</div>
+                        <div class="tool-price">Pay-per-use от $0.23 per 1M read ops</div>
+                        <div class="tool-description">Serverless transactional database с AI-optimized ACID guarantees, intelligent data distribution и automated conflict resolution.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Neo4j AuraDB Professional</div>
+                        <div class="tool-price">От $200/месяц per cluster</div>
+                        <div class="tool-description">ИИ-enhanced graph database с automated relationship discovery, intelligent pattern detection и AI-powered query optimization.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-engineer" class="profession-section">
+            <h2>Data Engineer</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Построение real-time data pipelines</li>
+                    <li>Stream processing и event-driven архитектуры</li>
+                    <li>Data quality automation и monitoring</li>
+                    <li>Infrastructure as Code для data platforms</li>
+                    <li>Cost optimization cloud data workloads</li>
+                    <li>Data security и compliance automation</li>
+                    <li>Multi-cloud data integration</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Airbyte with AI Connectors</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">ИИ-платформа интеграции данных с автоматическим обнаружением схем, smart mapping и intelligent data quality monitoring.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Streamlit with AI Components</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">ИИ-enhanced app framework для создания интерактивных data applications с встроенными ML компонентами и auto-generated insights.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Kedro-Viz with AI Insights</div>
+                        <div class="tool-price">Бесплатно (Open Source)</div>
+                        <div class="tool-description">ИИ-визуализация data pipelines с автоматическим анализом узких мест, intelligent optimization recommendations и predictive performance monitoring.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Estuary Flow Real-time CDP</div>
+                        <div class="tool-price">От $500/месяц per connector</div>
+                        <div class="tool-description">Real-time data streaming с ИИ-optimization, automatic schema evolution, bidirectional sync и intelligent error handling.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Confluent Cloud with AI</div>
+                        <div class="tool-price">От $1,000/месяц base + usage</div>
+                        <div class="tool-description">Managed streaming platform с ИИ-powered monitoring, intelligent scaling recommendations и automated data governance.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Airbyte Cloud</div>
+                        <div class="tool-price">От $2.50 per 1M rows synced</div>
+                        <div class="tool-description">ELT platform с 300+ connectors, AI-powered data transformation suggestions и automatic connector maintenance.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Prefect Cloud</div>
+                        <div class="tool-price">От $50/месяц per user</div>
+                        <div class="tool-description">Modern workflow orchestration с machine learning для intelligent scheduling, automatic retries и predictive failure detection.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Monte Carlo Data Observability</div>
+                        <div class="tool-price">Custom pricing от $10,000/год</div>
+                        <div class="tool-description">Data reliability platform с machine learning anomaly detection, automatic data lineage mapping и intelligent incident response.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hr-manager" class="profession-section">
+            <h2>HR Manager</h2>
+            
+            <div class="task-list">
+                <h3>Ключевые задачи</h3>
+                <ol>
+                    <li>Автоматизация рекрутинга и скрининга кандидатов</li>
+                    <li>Employee onboarding и personalized training</li>
+                    <li>Performance management и feedback automation</li>
+                    <li>Predictive HR analytics и retention modeling</li>
+                    <li>Automated employee self-service support</li>
+                    <li>Workforce planning и demand forecasting</li>
+                    <li>Compliance monitoring и automated reporting</li>
+                </ol>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-category">
+                    <h4>Бесплатные ИИ инструменты</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">LinkedIn Talent Insights (Limited)</div>
+                        <div class="tool-price">Бесплатно для базовых insights</div>
+                        <div class="tool-description">Market intelligence для talent acquisition с AI-powered candidate sourcing и basic workforce analytics.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Google Workspace HR Extensions</div>
+                        <div class="tool-price">Включено в Workspace планы</div>
+                        <div class="tool-description">HR workflow automation с Gemini AI integration для document generation, employee communications и basic analytics.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Microsoft Viva Insights (Basic)</div>
+                        <div class="tool-price">Включено в Microsoft 365</div>
+                        <div class="tool-description">Employee wellbeing analytics с AI insights для productivity patterns, collaboration metrics и automated recommendations.</div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h4>Платные ИИ решения</h4>
+                    
+                    <div class="tool-item">
+                        <div class="tool-name">Workday HCM with AI</div>
+                        <div class="tool-price">От $4,000/месяц для 1000 сотрудников</div>
+                        <div class="tool-description">Enterprise HCM с AI-powered recruiting, predictive analytics для retention, automated performance insights и intelligent workforce planning.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">BambooHR with Performance Management AI</div>
+                        <div class="tool-price">От $8.25/месяц per employee</div>
+                        <div class="tool-description">HR platform с AI-assisted performance reviews, automated goal tracking, predictive turnover analytics и intelligent onboarding workflows.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Lever ATS with AI Sourcing</div>
+                        <div class="tool-price">От $700/месяц per recruiter</div>
+                        <div class="tool-description">Applicant tracking system с AI candidate matching, automated screening, intelligent interview scheduling и bias detection.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Culture Amp with AI Insights</div>
+                        <div class="tool-price">От $4/месяц per employee</div>
+                        <div class="tool-description">Employee feedback platform с machine learning для sentiment analysis, automated action plan generation и predictive engagement modeling.</div>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-name">Moveworks AI Agent for HR</div>
+                        <div class="tool-price">Custom pricing от $50,000/год</div>
+                        <div class="tool-description">Conversational AI HR assistant с automated case resolution, employee self-service automation и intelligent policy guidance.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="info-block">
+            <h3>Тренды ИИ в области данных на октябрь 2025</h3>
+            <p>Основываясь на проведенном исследовании, выделены следующие ключевые тренды:</p>
+            <ul>
+                <li><strong>Agentic AI:</strong> 80% организаций внедряют ИИ-агентов, с 96% планирующих расширение в 2025 году</li>
+                <li><strong>Real-time processing:</strong> Переход от batch к real-time обработке данных с ИИ-оптимизацией</li>
+                <li><strong>No-code/Low-code:</strong> Democratization инструментов ИИ для non-technical пользователей</li>
+                <li><strong>Integrated platforms:</strong> Консолидация point solutions в comprehensive ИИ-платформы</li>
+                <li><strong>Cost optimization:</strong> ИИ-powered resource management для cloud workloads</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <h3>Рекомендации по выбору инструментов</h3>
+            <p>При выборе ИИ-инструментов учитывайте:</p>
+            <ul>
+                <li>Начинайте с бесплатных/open-source решений для proof-of-concept</li>
+                <li>Prioritize платформы с strong community и enterprise support</li>
+                <li>Учитывайте total cost of ownership, включая training и maintenance</li>
+                <li>Выбирайте решения с API-first architecture для integration flexibility</li>
+                <li>Проверяйте compliance requirements для вашей индустрии</li>
+            </ul>
+        </div>
+    </main>
 </body>
 </html>
